@@ -1,0 +1,27 @@
+﻿@model ContactoViewModel;
+@{
+    ViewData["Title"] = "Contacto";
+}
+
+<h1>Formulario de Contacto</h1>
+<hr />
+
+<form asp-controller="Home" asp-action="Contacto">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input asp-for="Nombre" class="form-control" placeholder="Fulano de tal!" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input asp-for="Email" class="form-control" placeholder="nombre@ejemplo.com" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="mensaje" class="form-label">Mensaje</label>
+        <textarea class="form-control" id="mensaje" name="mensaje" rows="3"></textarea>
+        <span asp-validation-for="Mensaje" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
